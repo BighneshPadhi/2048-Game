@@ -138,7 +138,6 @@ function checkGameOver() {
   alert("Game over!")
 }
 
-// Keyboard controls
 document.addEventListener("keydown", (e) => {
   if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
     e.preventDefault()
@@ -146,7 +145,6 @@ document.addEventListener("keydown", (e) => {
   }
 })
 
-// Touch controls
 gameBoard.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX
   touchStartY = e.touches[0].clientY
@@ -164,7 +162,6 @@ gameBoard.addEventListener("touchend", (e) => {
   const deltaY = touchEndY - touchStartY
 
   if (Math.abs(deltaX) > Math.abs(deltaY)) {
-    // Horizontal swipe
     if (deltaX > 0) {
       move("ArrowRight")
     } else {
@@ -185,7 +182,6 @@ gameBoard.addEventListener("touchend", (e) => {
 
 newGameButton.addEventListener("click", initGame)
 
-// Theme toggle functionality
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode")
   const isDarkMode = document.body.classList.contains("dark-mode")
@@ -193,7 +189,6 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("darkMode", isDarkMode)
 })
 
-// Check for saved theme preference
 const savedDarkMode = localStorage.getItem("darkMode")
 if (savedDarkMode === "true") {
   document.body.classList.add("dark-mode")
