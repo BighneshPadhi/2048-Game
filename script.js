@@ -168,7 +168,6 @@ gameBoard.addEventListener("touchend", (e) => {
       move("ArrowLeft")
     }
   } else {
-    // Vertical swipe
     if (deltaY > 0) {
       move("ArrowDown")
     } else {
